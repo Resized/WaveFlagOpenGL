@@ -21,7 +21,7 @@ double offset = 0;
 POINT_2D first_point;
 
 MY_COLOR flagBackgroundColor = { 200,200,200 };
-MY_COLOR flagStarColor = { 0,0,200 };
+MY_COLOR flagStarColor = { 50,50,200 };
 const int BOTTOM_STRIPE = H / 6;
 const int TOP_STRIPE = H / 3.5;
 
