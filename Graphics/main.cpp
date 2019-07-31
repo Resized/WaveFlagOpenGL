@@ -27,6 +27,7 @@ const int TOP_STRIPE = H / 3.5;
 
 const double WAVE_SPEED = 0.1;
 double waveIntensity = 0.4;
+double waveLength = 0.02;
 int starThickness = 5;
 
 
@@ -175,9 +176,9 @@ void drawWave()
 		for (j = 0; j < W; j++)
 		{
 			dist = sqrt((double)(H / 2 - i)*(H / 2 - i) + (-W / 2 - j)*(-W / 2 - j));
-			pix[i][j][0] = fmax(0, fmin(255, pix[i][j][0] + (127.5 * (sin(dist / 50.0 - offset)))*waveIntensity)); // R
-			pix[i][j][1] = fmax(0, fmin(255, pix[i][j][1] + (127.5 * (sin(dist / 50.0 - offset)))*waveIntensity)); // G
-			pix[i][j][2] = fmax(0, fmin(255, pix[i][j][2] + (127.5 * (sin(dist / 50.0 - offset)))*waveIntensity)); // B
+			pix[i][j][0] = fmax(0, fmin(255, pix[i][j][0] + (127.5 * (sin(dist * waveLength - offset)))*waveIntensity)); // R
+			pix[i][j][1] = fmax(0, fmin(255, pix[i][j][1] + (127.5 * (sin(dist * waveLength - offset)))*waveIntensity)); // G
+			pix[i][j][2] = fmax(0, fmin(255, pix[i][j][2] + (127.5 * (sin(dist * waveLength - offset)))*waveIntensity)); // B
 		}
 }
 
